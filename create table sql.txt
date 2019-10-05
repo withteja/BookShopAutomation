@@ -1,0 +1,88 @@
+DROP DATABASE IF EXISTS BSA;
+CREATE DATABASE BSA;
+USE BSA;
+CREATE TABLE SUPPLIER (
+	emp_id int(11),
+	job varchar(50),
+	emp_name varchar(50),
+	PRIMARY KEY (emp_id)
+);
+CREATE TABLE CUSTOMER (
+	c_id int(11),
+	c_addr varchar(50),
+	c_name varchar(50),
+	PRIMARY KEY (c_id)
+);
+CREATE TABLE DISTRIBUTOR (
+	d_id int(11),
+	d_name varchar(50),
+	d_addr varchar(50),
+	PRIMARY KEY (d_id)
+);
+CREATE TABLE BILL (
+	price int(11),
+	o_no int(11),
+        PRIMARY KEY (o_no)
+);
+CREATE TABLE BOOK (
+	b_title varchar(50),
+	isbn_no int(11),
+	b_id int(11),
+        PRIMARY KEY (b_id)
+);
+CREATE TABLE BOOKCATALOG (
+	book_type varchar(50),
+        cat_id int(11),
+        book_price varchar(50),
+        PRIMARY KEY (cat_id)
+);
+CREATE TABLE PUBLISHER (
+	pub_id int(11),
+	pay int(11),
+	p_addr varchar(50),
+	PRIMARY KEY (pub_id)
+);
+CREATE TABLE SELL (
+	emp_id int(11),
+	b_id int(11),
+	o_no int(11),
+	c_id int(11),
+        FOREIGN KEY(emp_id) REFERENCES SUPPLIER(emp_id),
+        FOREIGN KEY(b_id) REFERENCES BOOK(b_id),
+        FOREIGN KEY(o_no) REFERENCES BILL(o_no),
+        FOREIGN KEY(c_id) REFERENCES CUSTOMER(c_id)
+
+);
+CREATE TABLE HAS (
+	d_id int(11),
+	pub_id int(11),
+        FOREIGN KEY(d_id) REFERENCES DISTRIBUTOR(d_id),
+        FOREIGN KEY(pub_id) REFERENCES PUBLISHER(pub_id)
+);
+CREATE TABLE INCLUDES (
+	cat_id int(11),
+	b_id int(11),
+        FOREIGN KEY(cat_id) REFERENCES BOOKCATALOG(cat_id),
+        FOREIGN KEY(b_id) REFERENCES BOOK(b_id)
+);
+CREATE TABLE PURCHASE (
+	pub_id int(11),
+	b_id int(11),
+	emp_id int(11),
+	FOREIGN KEY(pub_id) REFERENCES PUBLISHER(pub_id),
+        FOREIGN KEY(b_id) REFERENCES BOOK(b_id),
+        FOREIGN KEY(emp_id) REFERENCES SUPPLIER(emp_id)
+);
+
+SHOW TABLES;
+DESC CUSTOMER;
+DESC SUPPLIER;
+DESC DISTRIBUTOR;
+DESC PUBLISHER;
+DESC BILL;
+DESC BOOK;
+DESC BOOKCATALOG;
+DESC SELL;
+DESC HAS;
+DESC INCLUDES;
+DESC PURCHASE;

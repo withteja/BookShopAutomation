@@ -1,0 +1,169 @@
+
+QUERIES
+ 
+1.display the book names along with book id's
+
+mysql> select b_title,b_id from BOOK;
++------------------------+------+
+| b_title                | b_id |
++------------------------+------+
+| War and Peace          | 1001 |
+| Song of Solomon        | 1101 |
+| Ulysses                | 1102 |
+| The Shadow of the Wind | 1103 |
+| The Lord of the Rings  | 1104 |
+| The Satanic Verses     | 1105 |
+| Don Quixote            | 1106 |
+| The Golden Compass     | 1107 |
+| Catch - 22             | 1108 |
+| 1984                   | 1109 |
++------------------------+------+
+10 rows in set (0.00 sec)
+
+2.display the bills
+
+mysql> select * from BILL;
++-------+------+
+| price | o_no |
++-------+------+
+|   100 |  101 |
+|   150 |  102 |
+|   200 |  103 |
+|   120 |  104 |
+|   140 |  105 |
+|   160 |  106 |
+|   180 |  107 |
+|   220 |  108 |
+|   240 |  109 |
+|   250 |  110 |
++-------+------+
+10 rows in set (0.00 sec)
+
+3.Display names of distributors that begin with letter "g"
+mysql> select d_name from DISTRIBUTOR where d_name like 'g%';
++--------+
+| d_name |
++--------+
+| grover |
+| gusto  |
++--------+
+2 rows in set (0.00 sec)
+
+4.Display customer and addressess with customer name in descending order.
+mysql> select c_name,c_addr from CUSTOMER order by c_name desc;
++----------+----------------------------+
+| c_name   | c_addr                     |
++----------+----------------------------+
+| John     | 4012  Hamilton Drive       |
+| Harold   | 291  Daylene Drive         |
+| Gary     | 740  Wildrose Lane         |
+| Franklin | 3073  Cherry Tree Drive    |
+| Emily    | 3506  Clarksburg Park Road |
+| Debra    | 1690  Caldwell Road        |
+| Charlie  | 690  Godfrey Road          |
+| Brandon  | 1995  Caynor Circle        |
+| Andrew   | Lady Bug Drive             |
+| Amber    | 309  Joyce Street          |
++----------+----------------------------+
+10 rows in set (0.00 sec)
+
+5.Display the book title along with book price.
+mysql> select b_title,book_price from BOOK b1,BOOKCATALOG b2,INCLUDES i where b1.b_id=i.b_id && b2.cat_id=i.cat_id;
++------------------------+------------+
+| b_title                | book_price |
++------------------------+------------+
+| War and Peace          | $10        |
+| Song of Solomon        | $15        |
+| Ulysses                | $12.5      |
+| The Shadow of the Wind | $10        |
+| The Lord of the Rings  | $13        |
+| The Satanic Verses     | $14        |
+| Don Quixote            | $11        |
+| The Golden Compass     | $10        |
+| Catch - 22             | $14        |
+| 1984                   | $10        |
++------------------------+------------+
+10 rows in set (0.00 sec)
+
+6.Display customer and the book issued.
+mysql> select c_name,b_title from CUSTOMER c1,BOOK b1,SELL s1 where c1.c_id=s1.c_id && b1.b_id=s1.b_id;
++----------+------------------------+
+| c_name   | b_title                |
++----------+------------------------+
+| Harold   | War and Peace          |
+| Andrew   | Song of Solomon        |
+| Amber    | Ulysses                |
+| Brandon  | The Shadow of the Wind |
+| Charlie  | The Lord of the Rings  |
+| Debra    | The Satanic Verses     |
+| Emily    | Don Quixote            |
+| Franklin | The Golden Compass     |
+| Gary     | Catch - 22             |
+| John     | 1984                   |
++----------+------------------------+
+10 rows in set (0.00 sec)
+
+7.Display publishers whose pay is above 20$
+mysql> select pub_id from PUBLISHER where pay>20;
++--------+
+| pub_id |
++--------+
+|   2110 |
+|   2112 |
+|   2114 |
+|   2115 |
+|   2116 |
+|   2117 |
+|   2118 |
++--------+
+7 rows in set (0.00 sec)
+
+8.Display the name and id of the employer whose is clerk.
+mysql> select emp_id,emp_name from SUPPLIER where job='clerk';
++--------+----------+
+| emp_id | emp_name |
++--------+----------+
+|   3110 | devon    |
++--------+----------+
+1 row in set (0.00 sec)
+
+9.Display entire details of a book.
+mysql> select * from BOOK natural join INCLUDES natural join BOOKCATALOG;
++--------+------+------------------------+---------+-------------------------------+------------+
+| cat_id | b_id | b_title                | isbn_no | book_type                     | book_price |
++--------+------+------------------------+---------+-------------------------------+------------+
+|    201 | 1001 | War and Peace          |   10000 | Historical Fiction            | $10        |
+|    202 | 1101 | Song of Solomon        |   10001 | African-American Literature   | $15        |
+|    203 | 1102 | Ulysses                |   10002 | Modernism                     | $12.5      |
+|    204 | 1103 | The Shadow of the Wind |   10003 | Mystery                       | $10        |
+|    205 | 1104 | The Lord of the Rings  |   10004 | Fantasy Fiction               | $13        |
+|    206 | 1105 | The Satanic Verses     |   10005 | Magical Realism               | $14        |
+|    207 | 1106 | Don Quixote            |   10006 | Novel                         | $11        |
+|    208 | 1107 | The Golden Compass     |   10007 | Juvenile Fantasy              | $10        |
+|    209 | 1108 | Catch - 22             |   10008 | Satire                        | $14        |
+|    210 | 1109 | 1984                   |   10009 | Utopian and dystopian fiction | $10        |
++--------+------+------------------------+---------+-------------------------------+------------+
+10 rows in set (0.00 sec)
+
+10.Display customers and their addressess
+mysql> select c_name,c_addr from CUSTOMER;
++----------+----------------------------+
+| c_name   | c_addr                     |
++----------+----------------------------+
+| Harold   | 291  Daylene Drive         |
+| Andrew   | Lady Bug Drive             |
+| Amber    | 309  Joyce Street          |
+| Brandon  | 1995  Caynor Circle        |
+| Charlie  | 690  Godfrey Road          |
+| Debra    | 1690  Caldwell Road        |
+| Emily    | 3506  Clarksburg Park Road |
+| Franklin | 3073  Cherry Tree Drive    |
+| Gary     | 740  Wildrose Lane         |
+| John     | 4012  Hamilton Drive       |
++----------+----------------------------+
+10 rows in set (0.00 sec)
+
+
+
+
+

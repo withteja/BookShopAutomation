@@ -1,0 +1,210 @@
+
+TABLES IN BOOK SHOP AUTOMATION
+
++---------------+
+| Tables_in_BSA |
++---------------+
+| BILL          |
+| BOOK          |
+| BOOKCATALOG   |
+| CUSTOMER      |
+| DISTRIBUTOR   |
+| HAS           |
+| INCLUDES      |
+| PUBLISHER     |
+| PURCHASE      |
+| SELL          |
+| SUPPLIER      |
++---------------+
+
+INDIVIDUAL TABLES WITH DATA
+
++--------+----------------------+----------+
+| emp_id | job                  | emp_name |
++--------+----------------------+----------+
+|   3110 | clerk                | devon    |
+|   3111 | IT technician        | charlie  |
+|   3112 | inventory manager    | henry    |
+|   3113 | distribution manager | lisa     |
+|   3114 | President            | subodh   |
+|   3115 | General Manager      | namrata  |
+|   3116 | Vice-president       | ashok    |
+|   3117 | sales clerk          | neelam   |
+|   3118 | accountant           | amber    |
+|   3119 | equipment manager    | chloe    |
++--------+----------------------+----------+
+10 rows in set (0.00 sec)
+
+
++-------+---------+--------------------------+
+| d_id  | d_name  | d_addr                   |
++-------+---------+--------------------------+
+| 11110 | loyla   | 32nd north harlem        |
+| 11111 | charlie | 24th east Broadway       |
+| 11112 | grover  | 32nd east Brooklyn       |
+| 11113 | Drequan | 72nd west Queens         |
+| 11114 | tyler   | 2nd east Harlem          |
+| 11115 | perry   | 32nd SW Park village     |
+| 11116 | gusto   | 24th downtown manhattan  |
+| 11117 | harmony | 32nd north Lexington ave |
+| 11118 | jolene  | 32nd Hudson bay          |
+| 11119 | kristin | 83rd long island         |
++-------+---------+--------------------------+
+10 rows in set (0.01 sec)
+
+
++--------+------+----------------------+
+| pub_id | pay  | p_addr               |
++--------+------+----------------------+
+|   2110 |   42 | 23rd Interlaken      |
+|   2111 |   10 | 24th Brooklyn        |
+|   2112 |   32 | 23rd west Hudson bay |
+|   2113 |   20 | 54th east Brooklyn   |
+|   2114 |   56 | 89th south harlem    |
+|   2115 |   45 | 85th west queens     |
+|   2116 |   32 | 222nd SW lexington   |
+|   2117 |   28 | 29th NW Newark       |
+|   2118 |   69 | 23rd Jump Street     |
+|   2119 |   11 | 28th SW broadway     |
++--------+------+----------------------+
+10 rows in set (0.00 sec)
+
+
++-------+----------------------------+----------+
+| c_id  | c_addr                     | c_name   |
++-------+----------------------------+----------+
+| 11000 | 291  Daylene Drive         | Harold   |
+| 11001 | Lady Bug Drive             | Andrew   |
+| 11002 | 309  Joyce Street          | Amber    |
+| 11003 | 1995  Caynor Circle        | Brandon  |
+| 11004 | 690  Godfrey Road          | Charlie  |
+| 11005 | 1690  Caldwell Road        | Debra    |
+| 11006 | 3506  Clarksburg Park Road | Emily    |
+| 11007 | 3073  Cherry Tree Drive    | Franklin |
+| 11008 | 740  Wildrose Lane         | Gary     |
+| 11009 | 4012  Hamilton Drive       | John     |
++-------+----------------------------+----------+
+10 rows in set (0.00 sec)
+
+
++-------------------------------+--------+------------+
+| book_type                     | cat_id | book_price |
++-------------------------------+--------+------------+
+| Historical Fiction            |    201 | $10        |
+| African-American Literature   |    202 | $15        |
+| Modernism                     |    203 | $12.5      |
+| Mystery                       |    204 | $10        |
+| Fantasy Fiction               |    205 | $13        |
+| Magical Realism               |    206 | $14        |
+| Novel                         |    207 | $11        |
+| Juvenile Fantasy              |    208 | $10        |
+| Satire                        |    209 | $14        |
+| Utopian and dystopian fiction |    210 | $10        |
++-------------------------------+--------+------------+
+10 rows in set (0.00 sec)
+
+
++------------------------+---------+------+
+| b_title                | isbn_no | b_id |
++------------------------+---------+------+
+| War and Peace          |   10000 | 1001 |
+| Song of Solomon        |   10001 | 1101 |
+| Ulysses                |   10002 | 1102 |
+| The Shadow of the Wind |   10003 | 1103 |
+| The Lord of the Rings  |   10004 | 1104 |
+| The Satanic Verses     |   10005 | 1105 |
+| Don Quixote            |   10006 | 1106 |
+| The Golden Compass     |   10007 | 1107 |
+| Catch - 22             |   10008 | 1108 |
+| 1984                   |   10009 | 1109 |
++------------------------+---------+------+
+10 rows in set (0.00 sec)
+
+
++-------+------+
+| price | o_no |
++-------+------+
+|   100 |  101 |
+|   150 |  102 |
+|   200 |  103 |
+|   120 |  104 |
+|   140 |  105 |
+|   160 |  106 |
+|   180 |  107 |
+|   220 |  108 |
+|   240 |  109 |
+|   250 |  110 |
++-------+------+
+10 rows in set (0.00 sec)
+
+
++--------+------+------+-------+
+| emp_id | b_id | o_no | c_id  |
++--------+------+------+-------+
+|   3110 | 1001 |  101 | 11000 |
+|   3111 | 1101 |  102 | 11001 |
+|   3112 | 1102 |  103 | 11002 |
+|   3113 | 1103 |  104 | 11003 |
+|   3114 | 1104 |  105 | 11004 |
+|   3115 | 1105 |  106 | 11005 |
+|   3116 | 1106 |  107 | 11006 |
+|   3117 | 1107 |  108 | 11007 |
+|   3118 | 1108 |  109 | 11008 |
+|   3119 | 1109 |  110 | 11009 |
++--------+------+------+-------+
+10 rows in set (0.00 sec)
+
+
++--------+------+--------+
+| pub_id | b_id | emp_id |
++--------+------+--------+
+|   2110 | 1001 |   3111 |
+|   2111 | 1101 |   3112 |
+|   2112 | 1102 |   3113 |
+|   2113 | 1103 |   3114 |
+|   2114 | 1104 |   3115 |
+|   2115 | 1105 |   3116 |
+|   2116 | 1106 |   3117 |
+|   2117 | 1107 |   3118 |
+|   2118 | 1108 |   3119 |
+|   2119 | 1109 |   3110 |
++--------+------+--------+
+10 rows in set (0.00 sec)
+
+
++-------+--------+
+| d_id  | pub_id |
++-------+--------+
+| 11111 |   2110 |
+| 11112 |   2111 |
+| 11113 |   2112 |
+| 11114 |   2113 |
+| 11115 |   2114 |
+| 11116 |   2115 |
+| 11117 |   2116 |
+| 11118 |   2117 |
+| 11119 |   2118 |
+| 11110 |   2119 |
++-------+--------+
+10 rows in set (0.00 sec)
+
+
++--------+------+
+| cat_id | b_id |
++--------+------+
+|    201 | 1001 |
+|    202 | 1101 |
+|    203 | 1102 |
+|    204 | 1103 |
+|    205 | 1104 |
+|    206 | 1105 |
+|    207 | 1106 |
+|    208 | 1107 |
+|    209 | 1108 |
+|    210 | 1109 |
++--------+------+
+10 rows in set (0.00 sec)
+
+
+
+

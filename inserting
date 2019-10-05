@@ -1,0 +1,146 @@
+insert into BILL values(100,101);
+insert into BILL values(150,102);
+insert into BILL values(200,103);
+insert into BILL values(120,104);
+insert into BILL values(140,105);
+insert into BILL values(160,106);
+insert into BILL values(180,107);
+insert into BILL values(220,108);
+insert into BILL values(240,109);
+insert into BILL values(250,110);
+
+
+
+ 
+insert into BOOK values('War and Peace',10000,1001);
+insert into BOOK values('Song of Solomon',10001, 1101);
+insert into BOOK values('Ulysses',10002, 1102);
+insert into BOOK values('The Shadow of the Wind',10003, 1103);
+insert into BOOK values('The Lord of the Rings',10004, 1104);
+insert into BOOK values('The Satanic Verses',10005, 1105);
+insert into BOOK values('Don Quixote',10006, 1106);
+insert into BOOK values('The Golden Compass',10007, 1107);
+insert into BOOK values('Catch - 22',10008, 1108);
+insert into BOOK values('1984',10009, 1109);
+
+
+insert into BOOKCATALOG values('Historical Fiction',201,'$10');
+insert into BOOKCATALOG values('African-American Literature',202,'$15');
+insert into BOOKCATALOG values('Modernism',203,'$12.5');
+insert into BOOKCATALOG values('Mystery',204,'$10');
+insert into BOOKCATALOG values('Fantasy Fiction',205,'$13');
+insert into BOOKCATALOG values('Magical Realism',206,'$14');
+insert into BOOKCATALOG values('Novel',207,'$11');
+insert into BOOKCATALOG values('Juvenile Fantasy',208,'$10');
+insert into BOOKCATALOG values('Satire',209,'$14');
+insert into BOOKCATALOG values('Utopian and dystopian fiction',210,'$10');
+
+insert into CUSTOMER values(11001,'Lady Bug Drive','Andrew');
+insert into CUSTOMER values(11002,'309  Joyce Street','Amber');
+insert into CUSTOMER values(11003,'1995  Caynor Circle','Brandon');
+insert into CUSTOMER values(11004,'690  Godfrey Road','Charlie');
+insert into CUSTOMER values(11005,'1690  Caldwell Road','Debra');
+insert into CUSTOMER values(11006,'3506  Clarksburg Park Road','Emily');
+insert into CUSTOMER values(11007,'3073  Cherry Tree Drive','Franklin');
+insert into CUSTOMER values(11008,'740  Wildrose Lane','Gary');
+insert into CUSTOMER values(11000,'291  Daylene Drive','Harold');
+insert into CUSTOMER values(11009,'4012  Hamilton Drive','John');
+
+
+insert into DISTRIBUTOR values(11111,'charlie','24th east Broadway');
+insert into DISTRIBUTOR values(11112,'grover','32nd east Brooklyn');
+insert into DISTRIBUTOR values(11113,'Drequan','72nd west Queens');
+insert into DISTRIBUTOR values(11114,'tyler','2nd east Harlem');
+insert into DISTRIBUTOR values(11115,'perry','32nd SW Park village');
+insert into DISTRIBUTOR values(11116,'gusto','24th downtown manhattan');
+insert into DISTRIBUTOR values(11117,'harmony','32nd north Lexington ave');
+insert into DISTRIBUTOR values(11118,'jolene','32nd Hudson bay');
+insert into DISTRIBUTOR values(11119,'kristin','83rd long island');
+insert into DISTRIBUTOR values(11110,'loyla','32nd north harlem');
+
+
+insert into PUBLISHER values(2110,42,'23rd Interlaken');
+insert into PUBLISHER values(2111,10,'24th Brooklyn');
+insert into PUBLISHER values(2112,32,'23rd west Hudson bay');
+insert into PUBLISHER values(2113,20,'54th east Brooklyn');
+insert into PUBLISHER values(2114,56,'89th south harlem');
+insert into PUBLISHER values(2115,45,'85th west queens');
+insert into PUBLISHER values(2116,32,'222nd SW lexington');
+insert into PUBLISHER values(2117,28,'29th NW Newark');
+insert into PUBLISHER values(2118,69,'23rd Jump Street');
+insert into PUBLISHER values(2119,11,'28th SW broadway');
+
+
+insert into SUPPLIER values(3111,'IT technician','charlie');
+insert into SUPPLIER values(3112,'inventory manager','henry');
+insert into SUPPLIER values(3113,'distribution manager','lisa');
+insert into SUPPLIER values(3114,'President','subodh');
+insert into SUPPLIER values(3115,'General Manager','namrata');
+insert into SUPPLIER values(3116,'Vice-president','ashok');
+insert into SUPPLIER values(3117,'sales clerk','neelam');
+insert into SUPPLIER values(3118,'accountant','amber');
+insert into SUPPLIER values(3119,'equipment manager','chloe');
+insert into SUPPLIER values(3110,'clerk','devon');
+
+
+INSERT INTO HAS VALUES(11111,2110);
+INSERT INTO HAS VALUES(11112,2111);
+INSERT INTO HAS VALUES(11113,2112);
+INSERT INTO HAS VALUES(11114,2113);
+INSERT INTO HAS VALUES(11115,2114);
+INSERT INTO HAS VALUES(11116,2115);
+INSERT INTO HAS VALUES(11117,2116);
+INSERT INTO HAS VALUES(11118,2117);
+INSERT INTO HAS VALUES(11119,2118);
+INSERT INTO HAS VALUES(11110,2119);
+
+
+INSERT INTO PURCHASE VALUES(2110,1001,3111);
+INSERT INTO PURCHASE VALUES(2111,1101,3112);
+INSERT INTO PURCHASE VALUES(2112,1102,3113);
+INSERT INTO PURCHASE VALUES(2113,1103,3114);
+INSERT INTO PURCHASE VALUES(2114,1104,3115);
+INSERT INTO PURCHASE VALUES(2115,1105,3116);
+INSERT INTO PURCHASE VALUES(2116,1106,3117);
+INSERT INTO PURCHASE VALUES(2117,1107,3118);
+INSERT INTO PURCHASE VALUES(2118,1108,3119);
+INSERT INTO PURCHASE VALUES(2119,1109,3110);
+
+
+
+INSERT INTO INCLUDES VALUES(201,1001);
+INSERT INTO INCLUDES VALUES(202,1101);
+INSERT INTO INCLUDES VALUES(203,1102);
+INSERT INTO INCLUDES VALUES(204,1103);
+INSERT INTO INCLUDES VALUES(205,1104);
+INSERT INTO INCLUDES VALUES(206,1105);
+INSERT INTO INCLUDES VALUES(207,1106);
+INSERT INTO INCLUDES VALUES(208,1107);
+INSERT INTO INCLUDES VALUES(209,1108);
+INSERT INTO INCLUDES VALUES(210,1109);
+
+
+
+
+INSERT INTO SELL VALUES(3110,1001,101,11000);
+INSERT INTO SELL VALUES(3111,1101,102,11001);
+INSERT INTO SELL VALUES(3112,1102,103,11002);
+INSERT INTO SELL VALUES(3113,1103,104,11003);
+INSERT INTO SELL VALUES(3114,1104,105,11004);
+INSERT INTO SELL VALUES(3115,1105,106,11005);
+INSERT INTO SELL VALUES(3116,1106,107,11006);
+INSERT INTO SELL VALUES(3117,1107,108,11007);
+INSERT INTO SELL VALUES(3118,1108,109,11008);
+INSERT INTO SELL VALUES(3119,1109,110,11009);
+
+select *from SUPPLIER;
+select *from DISTRIBUTOR;
+select *from PUBLISHER;
+select *from CUSTOMER;
+select *from BOOKCATALOG;
+select *from BOOK;
+select *from BILL;
+select *from SELL;
+select *from PURCHASE;
+select *from HAS;
+select *from INCLUDES;
